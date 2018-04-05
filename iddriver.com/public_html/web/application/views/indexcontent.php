@@ -79,6 +79,7 @@
 
         <li><a href='<?php echo site_url('main/register')?>'><span>หลักสูตร</span></a></li>
         <li><a href='<?php echo site_url('main/autocheck')?>'><span>ตรวจสอบสภาพรถ</span></a></li>
+        <li><a href='<?php echo site_url('main/check_car_all')?>'><span>ตรวจสอบสภาพรถ(notter)</span></a></li>
         <li><a class='last' href='<?php echo site_url('main/gallery')?>'><span>บรรยากาศโรงเรียน</span></a></li>
         <li>
           <div class="dropdown">

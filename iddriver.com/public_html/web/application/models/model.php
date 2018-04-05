@@ -474,7 +474,6 @@ class model extends CI_Model {
 public function getBranchs() {
 	$query = $this->db->select()
 		->from('branch')
-		// ->where('branch.id', $id)
 		->get();
 	return $query->result_array();
 }
@@ -486,31 +485,21 @@ function getBranch_by_id($id){
 	return $query->row_array();
 }
 public function getUrls()	{
-
 	$query = $this->db->select()
 		->from('linkvideo')
 		->where('linkvideo.status', 1)
 		->get();
 	return $query->result_array();
-
 }
-
-
-
 public function setUrl($qstr)	{
 	if ($qstr['id'] == '')	{
 		unset($qstr['id']);
-
 		$this->db->insert('linkvideo', $qstr);
-
 	}
 	else	{
-
 		$data = array(
-
 			'url' => $qstr['url'],
 			'status' => $qstr['status']
-
 		);
 		$this->db->where('id', $qstr['id']);
 
@@ -519,15 +508,25 @@ public function setUrl($qstr)	{
 
 }
 
-
-
 public function setStatusUrl($qstr)	{
 	$this->db->set('status', $qstr['status']);
-
 	$this->db->where('id', $qstr['id']);
-
 	$this->db->update('linkvideo');
+}
 
+public function get_car_all()
+{
+	$query = $this->db->select()
+	->from('check_car')
+	->get();
+return $query->result_array();
+}
+
+function get_car_by_id($id){
+	$this->db->where('id',$id);
+	$query = $this->db->get('check_car');
+
+	return $query->row_array();
 }
 
 
