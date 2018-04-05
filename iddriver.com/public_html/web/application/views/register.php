@@ -125,7 +125,7 @@
             <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList1" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">ใบขับขี่รถยนต์</h3>
+                        <h3 class="panel-title"><?php echo $course2['course_name'];?></h3>
                     </div>
                     <div class="panel-body">
 
@@ -133,7 +133,7 @@
                             <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt="">
                         </div>
                         <div class="col-xs-12">
-                        	<h3 style="text-decoration:underline">ใบขับขี่รถยนต์</h3>
+                        	<!-- <h3 style="text-decoration:underline">ใบขับขี่รถยนต์</h3>
                             <p><strong>หลักฐานประกอบการสมัคร</strong></p>
                             <ol>
                             <li>สำเนาบัตรประชาชน2 ฉบับ (ใช้คัดประวัติด้วย)</li>
@@ -150,7 +150,8 @@
                             <p>สอนขับด้วยครูฝึก(ที่ได้รับใบอนุญาตจากกรมการขนส่งทางบก) ครั้งละ 2 ชั่วโมง</p>
                             <p>รวม รถยนต์-ค่าน้ำมัน-ครูฝึก-สนามฝึก เป็นของสถาบันไอดี ไดรฟเวอร์</p>
                             <p style="color:#F00"><strong>ติวเตอร์ทั้งภาคทฤษฎี - ปฏิบัติ </strong></p>
-                            <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง  และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p>
+                            <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง  และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p> -->
+                            <?php echo $course2['course_desc'];?>
                             <hr>
                             <h3>15 ชม. / ราคา <?php echo number_format($course[0]['course_cost']); ?> บาท</h3>
                         </div>
@@ -162,7 +163,8 @@
             <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList2" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">ใบขับขี่รถจักรยานยนต์</h3>
+                        <!-- <h3 class="panel-title">ใบขับขี่รถจักรยานยนต์</h3> -->
+                        <h3 class="panel-title"><?php echo $course2['course_name'];?></h3>
                     </div>
                     <div class="panel-body">
 
@@ -170,8 +172,8 @@
                             <img src="<?php echo base_url();?>/img/DSC_5488.jpg" alt="">
                         </div>
                         <div class="col-xs-12">
-                        <h3 style="text-decoration:underline">ใบขับขี่รถจักรยานยนต์</h3>
-                            <p><strong>หลักฐานประกอบการสมัคร</strong></p>
+                        <!--<h3 style="text-decoration:underline">ใบขับขี่รถจักรยานยนต์</h3>
+                             <p><strong>หลักฐานประกอบการสมัคร</strong></p>
                             <ol>
                             <li>สำเนาบัตรประชาชน2 ฉบับ (ใช้คัดประวัติด้วย)</li>
                             <li>ใบรับรองแพทย์ (ตัวจริง) 1 ฉบับ ออกให้ไม่เกิน 30 วัน</li>
@@ -186,7 +188,8 @@
                             <p><strong>ฝึกภาคปฏิบัติ 10 ชม.</strong></p>
                             <p>สอนขับด้วยครูฝึก(ที่ได้รับใบอนุญาตจากกรมการขนส่งทางบก) ครั้งละ 2 ชั่วโมง รวม รถยนต์-ค่าน้ำมัน-ครูฝึก-สนามฝึก เป็นของสถาบันไอดี ไดรฟเวอร์</p>
                             <p style="color:#F00"><strong>ติวเตอร์ทั้งภาคทฤษฎี - ปฏิบัติ </strong></p>
-                            <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p>                            
+                            <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p>                             -->
+                            <?php echo $course2['course_desc'];?>
                             <hr>
                             <h3>15 ชม. / ราคา <?php echo number_format($course[1]['course_cost']); ?> บาท</h3>
                         </div>
@@ -198,7 +201,8 @@
             <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList3" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">ใบขับขี่รถขนส่งบรรทุก</h3>
+                        <!-- <h3 class="panel-title">ใบขับขี่รถขนส่งบรรทุก</h3> -->
+                        <h3 class="panel-title"><?php echo $course2['course_name'];?></h3>
                     </div>
                     <div class="panel-body">
 
@@ -206,8 +210,8 @@
                             <img src="<?php echo base_url();?>/img/DSC_5388.jpg" alt="">
                         </div>
                         <div class="colxs-12"><br />
-                        <h3 style="text-decoration:underline">ใบขับขี่รถขนส่งบรรทุก</h3>
-                            <p><strong>อบรมทฤษฏีพร้อมปฏิบัติ</strong></p>
+                        <!--<h3 style="text-decoration:underline">ใบขับขี่รถขนส่งบรรทุก</h3>
+                             <p><strong>อบรมทฤษฏีพร้อมปฏิบัติ</strong></p>
                             <p><strong>หลักฐานประกอบการสมัคร</strong></p>
                             <ol>
                             <li>สำเนาบัตรประชาชน4 ฉบับ (ใช้คัดประวัติด้วย)</li>
@@ -223,7 +227,8 @@
                             </ol>
                             <p style="color:#F00"><strong>ติวเตอร์ทั้งภาคทฤษฎี - ปฏิบัติ </strong></p>
                             <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p>
-                            
+                             -->
+                             <?php echo $course2['course_desc'];?>
                             <hr>
                             <h3>2 ชม. / ราคา <?php echo number_format($course[2]['course_cost']); ?> บาท</h3>
                         </div>
@@ -233,14 +238,15 @@
             <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList4" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">ใบขับขี่รถลากจูง</h3>
+                        <!-- <h3 class="panel-title">ใบขับขี่รถลากจูง</h3> -->
+                        <h3 class="panel-title"><?php echo $course2['course_name'];?></h3>
                     </div>
                     <div class="panel-body">
                         <div class="col-xs-12">
                             <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt="">
                         </div>
                         <div class="col-xs-12">
-                        <h3 style="text-decoration:underline">ใบขับขี่รถลากจูง</h3>
+                         <!--<h3 style="text-decoration:underline">ใบขับขี่รถลากจูง</h3>
                             <p><strong>อบรมทฤษฏีพร้อมปฏิบัติ</strong></p>
                             <p><strong>หลักฐานประกอบการสมัคร</strong></p>
                             <ol>
@@ -256,7 +262,8 @@
                             <li>มีใบอนุญาตขับขี่รถยนต์ส่วนบุคคลแล้ว</li>
                             </ol>
                             <p style="color:#F00"><strong>ติวเตอร์ทั้งภาคทฤษฎี - ปฏิบัติ </strong></p>
-                            <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p>                         
+                            <p style="color:#F00">ผู้เรียนใช้รถฝึกขับจำลอง ภายในห้องได้ก่อนขับรถจริง และฝึกทำแบบทดสอบติวเตอร์ระบบอิเล็กทรอนิค ก่อนทดสอบใบอนุญาตขับรถ</p>                          -->
+                            <?php echo $course2['course_desc'];?>
                             <hr>
                         <h3>2 ชม. / ราคา  <?php echo number_format($course[3]['course_cost']); ?> บาท</h3>
 

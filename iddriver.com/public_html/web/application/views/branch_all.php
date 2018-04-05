@@ -14,15 +14,15 @@
               <div class="row">
                 <div class="panel panel-default" style="width:95%;">
                   <div class="panel-body">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div style="width:250px;height200px;">
-                        <a href="<?php echo base_url()?>/img/branchkk2.jpg">
-                          <img src="<?php echo base_url()?>/img/branchkk2.jpg"
+                      <a href="<?php echo base_url()?><?php echo $value['img_logo'] ?>">
+                          <img src="<?php echo base_url()?><?php echo $value['img_logo'] ?>"
                           class="img-responsive Thumbnail">
                         </a>
                       </div>
                     </div>
-                  <div class="col-md-5">
+                  <div class="col-md-9">
                     <div>
                       <h2><?php echo $value['name'] ?></h2>
                           เบอร์โทรศัพท์ : <?php echo $value['tel'] ?> <br>
