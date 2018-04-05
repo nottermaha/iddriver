@@ -4,7 +4,7 @@
   <div class="section">
 
     <div class="col-md-9">
-      <div class="panel">
+      <div class="panel" style="background-color:rgba(255,255,255,0.9);">
         <div class="body" style="padding-left:20px;padding-right:20px;">
               <h1 style="text-align:center;"><?php echo $car_by_id['name'] ?></h1>
               <hr style="width:90%;">
@@ -32,18 +32,25 @@
     </div>
 
     <div class="col-md-3" style="padding-right:20px;">
-      <div class="panel">
+      <div class="panel" style="background-color:rgba(255,255,255,0.9);" >
         <div class="body">
         <h1 style="text-align:center;">บริการของเรา</h1>
         <hr style="width:90%;"> 
           <div class="row">
             <div style="padding-left:50px;">
+           ตรวจสอบภาพรถ <br>
+           เปลี่ยนน้ำมันเครื่อง <br>
+            </div>
+        </div>
+        <h1 style="text-align:center;">สาขาทั้งหมด</h1>
+        <hr style="width:90%;"> 
+          <div class="row">
+            <div style="padding-left:50px;">
             <?php 
               foreach($car_all as $key=>$value){?>
-                <a href="<?php echo site_url('main/check_car/'.$value['id'])?>"><?php echo $value['name'] ?></a>  <br>
+                <a href="<?php echo site_url('main/check_car/'.$value['id'])?>"><i class="fa fa-home">&nbsp;</i><?php echo $value['name'] ?></a>  <br>
               <?php } ?>
-            </div>
-
+            </div><br>
         </div>
         </div>
       </div>
