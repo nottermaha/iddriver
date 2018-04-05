@@ -19,6 +19,7 @@
         <div class="form-group row">
         <b style="text-align:right;"><label for="inputPassword" class="col-sm-2 col-form-label">รูปภาพ</label></b>
           <div class="col-sm-9">
+            <input type="hidden" class="form-control" name="oldImage" id="oldImage" value="<?php echo $course[0]['image'] ?>">
 			      <input type="file" name="file" id="file" class="file" class="form-control" data-preview-file-type="text">
           </div>
         </div>

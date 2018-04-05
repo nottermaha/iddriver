@@ -122,7 +122,30 @@
                 </div>
             </div>
 
-            <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList1" style="display:none">
+            <?php $index = 0 ?>
+            <?php foreach ($course as $key => $value) { ?>
+                <?php $index += 1 ?>
+                <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList<?php echo $index ?>" style="display:none">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><?php echo $value['course_name'] ?></h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="col-xs-12">
+                                <img src="<?php echo base_url('img/'.$value['image']);?>" alt="">
+                            </div>
+                            <div class="col-xs-12">
+                                <?php echo $value['course_desc'] ?>
+                                <h3>15 ชม. / ราคา <?php echo number_format($value['course_cost']); ?> บาท</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <!-- <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList1" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">ใบขับขี่รถยนต์</h3>
@@ -264,7 +287,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
 
                          
 

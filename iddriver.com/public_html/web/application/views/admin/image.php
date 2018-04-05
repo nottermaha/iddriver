@@ -60,6 +60,7 @@
                     <div class="row">
                       <label class="control-label col-sm-1" for="file">Image:</label>
                       <div class="col-sm-11">
+                        <input type="hidden" class="form-control" name="oldImage" id="oldImage" value="<?php echo $value['image'] ?>">
                         <input type="file" name="file" id="file" class="file" class="form-control" data-preview-file-type="text">
                       </div>
                     </div>

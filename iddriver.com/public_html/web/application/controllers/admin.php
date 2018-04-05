@@ -51,7 +51,6 @@ class admin extends CI_Controller {
 			'description'=>$this->input->post('description'),
 			'image' => $imageupload_name
 		);
-    echo '<pre>', print_r($data);exit();
 		$this->update->editnews($data);
 		redirect('admin/news');
 	}
@@ -624,6 +623,14 @@ class admin extends CI_Controller {
       'default_file' => 0,
     );
     $file_name = $this->upload_file($prop);
+		if ($this->input->post('ID')=='') {
+			$oldImage = 'default-image.jpg';
+		} else {
+			$oldImage = $this->input->post('oldImage');
+			if ($file_name=='default-image.jpg') {
+				$file_name = $oldImage;
+			}
+		}
 		$qstr = array(
 			'ID' => $this->input->post('ID'),
 			'course_name' => $this->input->post('course_name'),
@@ -655,6 +662,14 @@ class admin extends CI_Controller {
       'default_file' => 0,
     );
     $file_name = $this->upload_file($prop);
+		if ($this->input->post('ID')=='') {
+			$oldImage = 'default-image.jpg';
+		} else {
+			$oldImage = $this->input->post('oldImage');
+			if ($file_name=='default-image.jpg') {
+				$file_name = $oldImage;
+			}
+		}
 		// $id=$this->uri->segment(3);
 		$qstr = array(
 			'ID' => $this->input->post('ID'),
@@ -767,6 +782,14 @@ class admin extends CI_Controller {
       'default_file' => 0,
     );
     $file_name = $this->upload_file($prop);
+		if ($this->input->post('imageId')=='') {
+			$oldImage = 'default-image.jpg';
+		} else {
+			$oldImage = $this->input->post('oldImage');
+			if ($file_name=='default-image.jpg') {
+				$file_name = $oldImage;
+			}
+		}
 		$qstr = array(
 			'id' => $this->input->post('imageId'),
 			'branchId' => $this->input->post('branchId'),
