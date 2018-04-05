@@ -17,7 +17,7 @@
       <tr>
         <th class='text-center'>#</th>
         <th class='text-center'>URL</th>
-        <th class='text-center'>�Ѵ���</th>
+        <th class='text-center'>จัดการ</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -45,7 +45,7 @@
                     <h4 class="modal-title">URL</h4>
                   </div>
                   <div class="modal-body">
-                    <input type="text" class="form-control" name="urlId" id="urlId" value="<?php echo $value['id'] ?>">
+                    <input type="hidden" class="form-control" name="urlId" id="urlId" value="<?php echo $value['id'] ?>">
                     <input type="text" class="form-control" name="url" id="url" value="<?php echo $value['url'] ?>">
                   </div>
                   <div class="modal-footer">
