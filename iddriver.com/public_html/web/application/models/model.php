@@ -478,65 +478,126 @@ class model extends CI_Model {
 		);
 		$this->db->where('ID', $qstr['ID']);
 		$this->db->update('course_admin', $qstr);	
-}
-public function getBranchs() {
-	$query = $this->db->select()
-		->from('branch')
-		->get();
-	return $query->result_array();
-}
-
-function getBranch_by_id($id){
-	$this->db->where('id',$id);
-	$query = $this->db->get('branch');
-
-	return $query->row_array();
-}
-public function getUrls()	{
-	$query = $this->db->select()
-		->from('linkvideo')
-		->where('linkvideo.status', 1)
-		->get();
-	return $query->result_array();
-}
-public function setUrl($qstr)	{
-	if ($qstr['id'] == '')	{
-		unset($qstr['id']);
-		$this->db->insert('linkvideo', $qstr);
 	}
-	else	{
-		$data = array(
-			'url' => $qstr['url'],
-			'status' => $qstr['status']
-		);
+	
+	public function getBranchs() {
+		$query = $this->db->select()
+			->from('branch')
+			->where('branch.status', 1)
+			->get();
+		return $query->result_array();
+	}
+
+	function getBranch_by_id($id){
+		$this->db->where('id',$id);
+		$query = $this->db->get('branch');
+
+		return $query->row_array();
+	}
+
+	public function setBranch($qstr)	{
+		if ($qstr['id'] == '')	{
+			unset($qstr['id']);
+			$this->db->insert('branch', $qstr);
+		}
+		else	{
+			$data = array(
+				'url' => $qstr['url'],
+				'status' => $qstr['status']
+			);
+			$this->db->where('id', $qstr['id']);
+
+			$this->db->update('branch', $qstr);
+		}
+	}
+
+	public function setStatusBranch($qstr)	{
+		$this->db->set('status', $qstr['status']);
 		$this->db->where('id', $qstr['id']);
+		$this->db->update('branch');
+	}
+	
+	public function getImages($id) {
+		$query = $this->db->select()
+			->from('branch_image')
+			->where('branch_image.branchId', $id)
+			->where('branch_image.status', 1)
+			->get();
+		return $query->result_array();
+	}
 
-		$this->db->update('linkvideo', $qstr);
+	public function setImage($qstr)	{
+		if ($qstr['id'] == '')	{
+			unset($qstr['id']);
+			$this->db->insert('branch_image', $qstr);
+		}
+		else	{
+			if ($qstr['image']!='default-image.jpg') {
+				$data = array(
+					'image' => $qstr['image'],
+					'status' => $qstr['status']
+				);
+			}
+			else {
+				$data = array(
+					'status' => $qstr['status']
+				);
+			}
+			$this->db->where('id', $qstr['id']);
+			$this->db->update('branch_image', $qstr);	
+		}
+	}
+
+	public function setStatusImage($qstr)	{
+		$this->db->set('status', $qstr['status']);
+		$this->db->where('id', $qstr['id']);
+		$this->db->update('branch_image');
+	}
+
+	public function getUrls()	{
+		$query = $this->db->select()
+			->from('linkvideo')
+			->where('linkvideo.status', 1)
+			->get();
+		return $query->result_array();
+	}
+
+	public function setUrl($qstr)	{
+		if ($qstr['id'] == '')	{
+			unset($qstr['id']);
+			$this->db->insert('linkvideo', $qstr);
+		}
+		else	{
+			$data = array(
+				'url' => $qstr['url'],
+				'status' => $qstr['status']
+			);
+			$this->db->where('id', $qstr['id']);
+
+			$this->db->update('linkvideo', $qstr);
+		}
+	}
+
+	public function setStatusUrl($qstr)	{
+		$this->db->set('status', $qstr['status']);
+		$this->db->where('id', $qstr['id']);
+		$this->db->update('linkvideo');
+	}
+
+	public function get_car_all()
+	{
+		$query = $this->db->select()
+		->from('check_car')
+		->get();
+	return $query->result_array();
+	}
+
+	function get_car_by_id($id){
+		$this->db->where('id',$id);
+		$query = $this->db->get('check_car');
+
+		return $query->row_array();
 	}
 
 }
-
-public function setStatusUrl($qstr)	{
-	$this->db->set('status', $qstr['status']);
-	$this->db->where('id', $qstr['id']);
-	$this->db->update('linkvideo');
-}
-
-public function get_car_all()
-{
-	$query = $this->db->select()
-	->from('check_car')
-	->get();
-return $query->result_array();
-}
-
-function get_car_by_id($id){
-	$this->db->where('id',$id);
-	$query = $this->db->get('check_car');
-
-	return $query->row_array();
-}
-
-
-   }
 ?>

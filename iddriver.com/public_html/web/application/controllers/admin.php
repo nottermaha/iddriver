@@ -659,50 +659,34 @@ class admin extends CI_Controller {
 	
 		redirect('admin/course');
 	}
+	
 	public function getYoutube()
 	{
+		$data["url"]= $this->model->getUrls();
+		$data['page'] = "admin/url";
+		$this->load->view('admin/admin',$data);
+	}
 
-	$data["url"]= $this->model->getUrls();
-	$data['page'] = "admin/url";
-	$this->load->view('admin/admin',$data);
-}
+	public function setYoutube()	{
+		$qstr = array(
+			'id' => $this->input->post('urlId'),
+			'url' => $this->input->post('url'),
+			'status' => '1'
+		);
+		$this->model->setUrl($qstr);
+		redirect('admin/getYoutube');
+	}
 
-
-
-public function setYoutube()	{
-	$qstr = array(
-		'id' => $this->input->post('urlId'),
-
-		'url' => $this->input->post('url'),
-
-		'status' => '1'
-	);
-
-	$this->model->setUrl($qstr);
-
-	redirect('admin/getYoutube');
-}
-
-
-
-public function setStatusYoutube()
-	{
-
-	$id = $this->uri->segment(3);
-	$qstr = array(
-
-		'id' => $id,
-
-		'status' => '0'
-	);
-
-	$this->model->setStatusUrl($qstr);
-
-	redirect('admin/getYoutube');
-
-}
-
-
+	public function setStatusYoutube()
+		{
+		$id = $this->uri->segment(3);
+		$qstr = array(
+			'id' => $id,
+			'status' => '0'
+		);
+		$this->model->setStatusUrl($qstr);
+		redirect('admin/getYoutube');
+	}
 
 	function upload_file($prop)
 	{
@@ -725,6 +709,74 @@ public function setStatusYoutube()
 						$file_name = ($prop['txt_unlink'] != NULL)? $prop['txt_unlink'] : '0';
 				}
 				return $file_name;
+	}
+
+	public function getBranchs()	{
+		$data["branchs"]= $this->model->getBranchs();
+		$data['page'] = "admin/branch";
+		$this->load->view('admin/admin',$data);
+	}
+
+	public function setBranch()	{
+		$qstr = array(
+			'id' => $this->input->post('branchId'),
+			'name' => $this->input->post('name'),
+			'tel' => $this->input->post('tel'),
+			'address' => $this->input->post('address'),
+			'thaiDetail' => $this->input->post('thaiDetail'),
+			'englishDetail' => $this->input->post('englishDetail'),
+			'status' => '1'
+		);
+		$this->model->setBranch($qstr);
+		redirect('admin/getBranchs');
+	}
+
+	public function setStatusBranch()	{
+		$id = $this->uri->segment(3);
+		$qstr = array(
+			'id' => $id,
+			'status' => '0'
+		);
+		$this->model->setStatusBranch($qstr);
+		redirect('admin/getBranchs');
+	}
+
+	public function getImages()	{
+		$branchId = $this->uri->segment(3);
+		$data["images"]= $this->model->getImages($branchId);
+		$data["branchId"]= $branchId;
+		$data['page'] = "admin/image";
+		$this->load->view('admin/admin',$data);
+	}
+
+	public function setImage()	{
+		$prop = array(
+      'upload_path' => 'img/',
+      'allowed_types' => 'jpg|jpeg|png|JPG|JPEG|PNG',
+      'txt_upload' => 'file',
+      'txt_unlink' => 'default-image.jpg',
+      'default_file' => 0,
+    );
+    $file_name = $this->upload_file($prop);
+		$qstr = array(
+			'id' => $this->input->post('imageId'),
+			'branchId' => $this->input->post('branchId'),
+			'image' => $file_name,
+			'status' => '1'
+		);
+		$this->model->setImage($qstr);
+		redirect('admin/getImages/'.$this->input->post('branchId'));
+	}
+
+	public function setStatusImage()	{
+		$id = $this->uri->segment(3);
+		$branchId = $this->uri->segment(4);
+		$qstr = array(
+			'id' => $id,
+			'status' => '0'
+		);
+		$this->model->setStatusImage($qstr);
+		redirect('admin/getImages/'.$branchId);
 	}
 	
 	  

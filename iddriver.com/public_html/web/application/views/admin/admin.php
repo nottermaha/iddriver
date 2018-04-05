@@ -165,9 +165,13 @@
                             </ul>
 
                         <?php } ?> 
+                        
+                        <li>
+                            <a href="<?php echo site_url()?>/admin/getBranchs"><i class="fa fa-sitemap"></i> จัดการสาขา</a>
+                        </li>
+
                         <li>
                             <a href="<?php echo site_url()?>/admin/getYoutube"><i class="fa fa-youtube-play"></i> YouTube</a>
-
                         </li>
 
                         <li>
