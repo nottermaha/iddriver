@@ -18,8 +18,8 @@
                   <div class="panel-body">
                     <div class="col-md-3">
                       <div style="width:250px;height200px;">
-                        <a href="<?php echo base_url()?><?php echo $value['img_logo'] ?>">
-                          <img src="<?php echo base_url()?><?php echo $value['img_logo'] ?>"
+                        <a href="<?php echo base_url()?>/img/idd_logo1b copy.png">
+                          <img src="<?php echo base_url()?>/img/idd_logo1b copy.png"
                           class="img-responsive Thumbnail">
                         </a>
                       </div>
