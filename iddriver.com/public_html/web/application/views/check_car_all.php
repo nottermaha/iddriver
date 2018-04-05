@@ -16,10 +16,10 @@
               <div class="row">
                 <div class="panel panel-default" style="width:95%;">
                   <div class="panel-body">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <div style="width:250px;height200px;">
-                        <a href="<?php echo base_url()?>/img/branchkk2.jpg">
-                          <img src="<?php echo base_url()?>/img/branchkk2.jpg"
+                        <a href="<?php echo base_url()?><?php echo $value['img_logo'] ?>">
+                          <img src="<?php echo base_url()?><?php echo $value['img_logo'] ?>"
                           class="img-responsive Thumbnail">
                         </a>
                       </div>
