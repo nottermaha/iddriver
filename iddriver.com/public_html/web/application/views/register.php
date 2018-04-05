@@ -130,7 +130,8 @@
                     <div class="panel-body">
 
                         <div class="col-xs-12">
-                            <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt="">
+                            <!-- <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt=""> -->
+                            <img src="<?php echo base_url('img/'.$course2['image']);?>/img/DSC_5488.jpg" alt="image">
                         </div>
                         <div class="col-xs-12">
                         	<!-- <h3 style="text-decoration:underline">ใบขับขี่รถยนต์</h3>
@@ -169,7 +170,9 @@
                     <div class="panel-body">
 
                         <div class="col-xs-12">
-                            <img src="<?php echo base_url();?>/img/DSC_5488.jpg" alt="">
+                            <!-- <img src="<?php echo base_url();?>/img/DSC_5488.jpg" alt=""> -->
+                            <img src="<?php echo base_url('img/'.$course2['image']);?>/img/DSC_5488.jpg" alt="image">
+                            
                         </div>
                         <div class="col-xs-12">
                         <!--<h3 style="text-decoration:underline">ใบขับขี่รถจักรยานยนต์</h3>
@@ -207,7 +210,8 @@
                     <div class="panel-body">
 
                         <div class="col-xs-12">
-                            <img src="<?php echo base_url();?>/img/DSC_5388.jpg" alt="">
+                            <!-- <img src="<?php echo base_url();?>/img/DSC_5388.jpg" alt=""> -->
+                            <img src="<?php echo base_url('img/'.$course2['image']);?>/img/DSC_5488.jpg" alt="image">
                         </div>
                         <div class="colxs-12"><br />
                         <!--<h3 style="text-decoration:underline">ใบขับขี่รถขนส่งบรรทุก</h3>
@@ -243,7 +247,8 @@
                     </div>
                     <div class="panel-body">
                         <div class="col-xs-12">
-                            <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt="">
+                            <!-- <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt=""> -->
+                            <img src="<?php echo base_url('img/'.$course2['image']);?>/img/DSC_5488.jpg" alt="image">
                         </div>
                         <div class="col-xs-12">
                          <!--<h3 style="text-decoration:underline">ใบขับขี่รถลากจูง</h3>
