@@ -1,0 +1,330 @@
+
+<?php 
+ $this->load->library("mpdf/mpdf");
+ ob_start();
+ ?>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-874">
+
+
+
+    <link rel="stylesheet" type="text/css" href="'.$css.'">
+
+    <title>ใบแจ้งการชำระเงิน</title>
+
+    <style type="text/css">
+        <!-- .style2 {
+            font-size: 10px
+        }
+        
+        .style3 {
+            color: #1D2475;
+            font-size: 14px;
+        }
+        
+        .style4 {
+            color: #1C2278;
+            font-size: 14px;
+        }
+        
+        -->
+    </style>
+
+    <style type="text/css"></style>
+</head>
+
+<body>
+
+    <div align="center">
+
+        <table width="850" border="1" cellpadding="6" cellspacing="0" bordercolor="#000000">
+
+            <tbody>
+                <tr>
+
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                            <tbody>
+                                <tr>
+
+                                    <td width="57%" height="111" align="center" valign="top" class="main">
+                                        <div align="left">
+
+                                            <p class="size16"><strong>ใบชำระเงินผ่านเคาน์เตอร์ธนาคาร <br>
+
+              </strong><span class="size14"><strong><img src="http://iddriver.com/images/idd_logo1a.gif" width="74" height="81" align="left"></strong></span><strong> โรงเรียนสอนขับรถไอดีไดร์ฟเวอร์</strong><span class="size14"><br>
+
+                  196 ถนนแก้วนวรัฐ ต.วัดเกต อ.เมือง จ.เชียงใหม่ 50000<br>
+ห
+                  </span><span class="size12"><strong>โทร</strong>: 053-300437-8, 053-241039, 053-244654
+
+                                    <strong>โทรสาร</strong>: 053-249152 </span><span class="size14"><br>
+
+                Email: Contact@dara.ac.th </span></p>
+
+                                        </div>
+                                    </td>
+
+                                    <td width="43%" align="right" valign="top" class="main">
+                                        <div align="right">
+
+                                            <p align="center" class="size16"><strong>สำหรับนักเรียน / ผู้ปกครอง</strong>
+                                                <br> โปรดเรียกเก็บค่าธรรมเนียมจากผู้ชำระเงิน
+
+                                            </p>
+
+                                            <p class="size16"><strong>สาขาที่รับฝาก </strong>
+
+                                                <input name="date2" type="text" id="date2" value="" size="40">
+
+                                                <strong>Date/วันที่</strong>
+
+                                                <input name="date" type="text" id="date" value="" size="40">
+
+                                            </p>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td valign="top" class="main"><span class="size14"><strong><em>เพื่อเข้าบัญชี</em></strong></span>
+                                        <br>
+
+                                        <img src="./ใบแจ้งการชำระเงิน_files/LogoTMB.jpg" width="46" height="27"><span class="size14"><strong> ธนาคารทหารไทย 443(Counter) / 5234 (e-Channel) </strong></span>
+
+                                        <hr>
+
+                                        <img src="./ใบแจ้งการชำระเงิน_files/KT.png" width="188" height="39"><span class="size12"><strong>เลขที่บัญชี 468-0-356786 (Bill Payment 10/10)</strong></span>
+                                        <hr>
+
+                                        <img src="./ใบแจ้งการชำระเงิน_files/BK_Bank.jpg" width="24" height="33" align="left"> &nbsp;&nbsp; <strong><span class="style4">Bangkok Bank ธนาคารกรุงเทพ </span><br> 
+
+                 &nbsp;&nbsp; <span class="size12">(Br. No. 0253) (Comp Code : 19600)(Service Code : DARA) (10/10)</span></strong>
+
+                                        <label></label>
+                                    </td>
+
+                                    <td align="right" class="main"><span class="size14"><strong>ชื่อ - สกุล (นักเรียน) : </strong>
+
+                <label>
+
+                <input name="Name" type="text" id="Name" size="30">
+
+                </label>
+
+            
+
+                <label><br>
+
+              Ref.2/REF.ON (เลขประจำตัวนักเรียน 5 หลัก)
+
+              <input name="date3" type="text" id="date3" value="" size="13">
+
+                </label>
+
+            </span>
+
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                            <tbody>
+                                                <tr>
+
+                                                    <td width="26%" valign="top" class="size14">Ref.1./Cust.NO</td>
+
+                                                    <td width="74%" align="right">
+                                                        <table width="260" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+
+                                                            <tbody>
+                                                                <tr>
+
+                                                                    <td width="15%" align="center" class="main size14 size14">ชั้น</td>
+
+                                                                    <td width="15%" align="center" class="main size14 size14">ห้อง</td>
+
+                                                                    <td width="70%" align="center" class="main size14 size14">ภาคเรียนที่ / ปีการศึกษา </td>
+
+                                                                </tr>
+
+                                                                <tr>
+
+                                                                    <td width="15%" align="center" class="main size14 size14">
+                                                                        <input name="r122" type="text" id="r122" size="6">
+                                                                    </td>
+
+                                                                    <td width="15%" align="center" class="main size14 size14">
+                                                                        <input name="r222" type="text" id="r222" size="6">
+                                                                    </td>
+
+                                                                    <td width="70%" align="center" class="main size14 size14">
+                                                                        <select name="select1" size="1" id="select1">
+
+                                                                            <option>เลือกภาคเรียน/ปีการศึกษา</option>
+
+                                                                            <option value="1 / 2554">1 / 2554</option>
+
+                                                                            <option value="2 / 2554">2 / 2554</option>
+
+                                                                            <option value="1 / 2555">1 / 2555</option>
+
+                                                                            <option value="2 / 2555">2 / 2555</option>
+
+                                                                            <option value="1 / 2556">1 / 2556</option>
+
+                                                                            <option value="2 / 2556">2 / 2556</option>
+
+                                                                            <option value="1 / 2557">1 / 2557</option>
+
+                                                                            <option value="2 / 2557">2 / 2557</option>
+
+                                                                            <option value="1 / 2558">1 / 2558</option>
+
+                                                                            <option value="2 / 2558">2 / 2558</option>
+
+                                                                        </select>
+                                                                    </td>
+
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td colspan="2" class="main">
+
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                                            <tbody>
+                                                <tr>
+
+                                                    <td height="40" colspan="3" valign="top" class="main">&nbsp;</td>
+
+                                                </tr>
+
+
+
+                                                <tr>
+
+                                                    <td width="15%" height="25" valign="top" class="main size14 size14"> จำนวนเงินเป็นตัวเลข
+                                                        <br>
+
+                                                        <br>
+                                                    </td>
+
+                                                    <td width="85%" colspan="2" rowspan="2" valign="top" class="main">
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                                            <tbody>
+                                                                <tr>
+
+                                                                    <td width="603">
+                                                                        <table width="362" border="1" cellpadding="0" cellspacing="0" bordercolor="#000000">
+
+                                                                            <tbody>
+                                                                                <tr>
+
+                                                                                    <td width="50%" align="center" class="size16 main size14 size14"><strong>เงินสด Cash </strong></td>
+
+                                                                                    <td width="50%" class="size14 size14">
+                                                                                        <input name="money" type="text" id="money" size="30">
+                                                                                    </td>
+
+                                                                                </tr>
+
+                                                                                <tr>
+
+                                                                                    <td colspan="2" class="size14 size14">
+                                                                                        <input name="textmoney" type="text" id="textmoney" size="60">
+                                                                                    </td>
+
+                                                                                </tr>
+
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+
+                                                                    <td width="128" align="right">
+                                                                        <table width="200" border="2" cellpadding="1" cellspacing="0" bordercolor="#000000">
+
+                                                                            <tbody>
+                                                                                <tr>
+
+                                                                                    <td height="40">&nbsp;</td>
+
+                                                                                </tr>
+
+                                                                                <tr>
+
+                                                                                    <td align="center"><font size="1"><b>สำหรับเจ้าหน้าที่ธนาคาร</b></font></td>
+
+                                                                                </tr>
+
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td height="13" valign="top" class="main size14 size14">จำนวนเงินเป็นตัวอักษร</td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td height="82" colspan="3" valign="top" class="main size14 size14">
+                                                        <p>
+                                                            <br> ผู้นำฝาก :
+
+                                                            <input name="Name_money" type="text" id="Name_money" size="90">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;โทร.
+
+                                                            <input type="text" name="textfield2">
+
+                                                            <br>
+
+                                                            <span class="size12 size12">- ให้นักเรียน / ผู้ปกครอง นำใบแจ้งการชำระเงินไปชำระเงินได้ที่ <strong>ธนาคารทหารไทย จำกัด(มหาชน), ธนาคารไทยพาณิชย์, ธนาคารกรุงเทพ ทุกสาขา ทั่วประเทศ</strong><br>
+
+                      - ให้นักเรียน / ผู้ปกครอง นำใบแจ้งการชำระเงินติดต่อรับใบเสร็จรับเงินของโรงเรียนที่ฝ่ายการเงินรับ หลังจากชำระเงินที่ธนาคาร 5 วันทำการ</span></p>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div align="center"><span class="style2"><br>
+                                 <?php 
+                                print_r(ob_get_contents());
+                                $html = ob_get_contents();
+                                ob_end_clean();
+                                $mpdf->SetAutoFont();
+                                $mpdf->WriteHTML( $html);
+                                $mpdf->Output();
+                                 ?>

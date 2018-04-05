@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=windows-874">
+body {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+.main {font-family: MS Sans Serif, Tahoma ; font-size: 11px; color: #000000}
+.write {font-family: MS Sans Serif, Tahoma ; font-size: 11px; color: #FFFFFF}
+.green {font-family: MS Sans Serif, Tahoma ; font-size: 11px; color: 54AB00}
+.blue {  font-family: MS Sans Serif, Tahoma ; font-size: 11px; color: 287BC1}
+.orange {font-family: MS Sans Serif, Tahoma; font-size: 11px; color: #FF6600;}
+.yellow {font-family: MS Sans Serif, Tahoma ; font-size: 11px; color:#FF9900}
+.red{font-family: MS Sans Serif, Tahoma ; font-size: 11px; color:#FF0000}
+.red2{font-family: MS Sans Serif, Tahoma ; font-size: 11px; color:#CC0000}
+.dark{font-family: MS Sans Serif, Tahoma ; font-size: 11px; color: #006699}
+.blon{font-family: MS Sans Serif, Tahoma ; font-size: 11px; color: #6BB6DA}
+.size20 {font-size: large;}
+.size18 {font-size: 18px;}
+.size16 {font-size: 16px;}
+.size14 {font-size: 14px;}
+.size12 {font-size: 12px;}
+.size11 {font-size: 11px;}

@@ -1,0 +1,660 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class main extends CI_Controller {
+	public function __construct() 
+	{
+        parent::__construct(); 
+        $this->load->library("mpdf/mpdf"); //โหลด Library โฟล์เดอร์ mpdf ตามด้วยชื่อไฟล์ mpdf ไม่    //ต้องมี .php นะครับ  
+    }
+	public function index()
+	{
+		$data['page'] = "indexcontent";
+		$data['keywords']="สอนขับรถ, ขอนแก่น, ลำลูกกา, ปทุมธานี, มหาสารคาม, สอนขับรถยนต์, สอนขับรถบรรทุก, โรงเรียนสอนขับรถ,สอบใบขับขี่, ทำใบขับขี่, โรงเรียนสอนขับรถพร้อมสอบใบขับขี่, สอนขับรถ พร้อมใบขับขี่, โรงเรียนสอนขับบรถยนต์,สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, รร สอนขับรถ, สอนขับ รถ ราคา, รร.สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์,สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ, สอนขี่มอเตอร์ไซค์,โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย, ต่อใบขับขี่, อบรม สอบใบขับขี่,อบรมใบขับขี่, ต่อใบอนุญาตขับขี่, เรียนขับรถ, รถยนต์ ราคา, รถ , เรียนขับรถยนต์ใบขับขี่ ราคา, เรียนขับรถยนต์,ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับมอเตอร์ไซค์,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ, เรียนขับรถบรรทุก, defensivedriver, iddriver, driver,หัดขับรถ, ไอดี, สอบ ใบขับขี่, สอน ขับ รถ เกียร์ ออ โต้, สอน ขับ รถ, หัด ขับ รถ, สอนขับรถ ขอนแก่น, สอนขับรถ,สารคาม, สอนขับรถ ลำลูกกา ปทุมธานี, สอนขับรภ บ้านนา"; 
+		$data['description']="โรงเรียนสอนขับรถ ไอดี ไดร์ฟเวอร์ IDDRIVER เรียนขับรถพร้อมสอบใบขับขี่ ทำใบขับขี่ รถยนต์ รถจักรยานยนต์รถบรรทุก สาขาขอนแก่น มหาสารคาม ปทุมธานี ลำลูกกา สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธิการ";
+		$data['news'] = $this->model->getNews(null);
+		$data['article'] = $this->model->getArticle(null);
+		$data['slide'] = $this->model->getSlide();
+		// echo "<pre>";
+		// print_r($data);
+		$this->load->view('index',$data);
+	}
+
+
+
+	public function branch_kk()
+	{
+		$data['keywords']="โรงเรยีนสอนขบัรถปทมุธานี สอนขับรถ พร้อมใบขับขี่ ขอนแก่น"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		 
+		$data['page'] = "branch_kk";
+		$this->load->view('index',$data);
+	}
+
+
+
+
+	public function branch_1()
+	{
+		$data['keywords']="โรงเรยีนสอนขบัรถปทมุธานี สอนขับรถ พร้อมใบขับขี่ ปทุมธานี"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		 
+		$data['page'] = "branch_1";
+		$this->load->view('index',$data);
+	}
+
+	public function branch_2()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		 
+		$data['page'] = "branch_2";
+		$this->load->view('index',$data);
+	}
+	public function branch_3()
+	{
+		$data['keywords']=" สอนขบั รถ มหาสารคาม สอนขับรถยนต์ มหาสารคาม เรียนขับรถ มหาสารคาม โรงเรยีนสอนขับรถ มหาสารคาม"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		 
+		$data['page'] = "branch_3";
+		$this->load->view('index',$data);
+	}
+	public function contact()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		 
+		$data['page'] = "contact";
+		$this->load->view('index',$data);
+	}
+	public function typography()
+	{
+		$data['page'] = "typography";
+		$this->load->view('index',$data);
+	}	
+	public function gallery()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		
+		$data['page'] = "gallery";
+		$data['images'] = $this->model->getGallery();
+		$data['album'] = $this->model->getAlbum();
+		// echo "<pre>";
+		// print_r($data);
+		$this->load->view('index',$data);
+	}	
+	public function generation()
+	{
+		$data['page'] = "generation";
+		$data['album'] = $this->model->getGeneration();
+		$data['images'] = $this->model->getGenImage();
+		$this->load->view('index',$data);
+	}	
+	public function autocheck()
+	{
+		$data['page'] = "autocheck";
+		$this->load->view('index',$data);
+	}
+	public function editSlide()
+	{
+		$data['page'] = "slide";
+		$data['slide'] = $this->model->getSlide();
+		$this->load->view('index',$data);
+	}	
+	public function register()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		
+		$data['page'] = "register";
+		$data['course'] = $this->model->getCourse();
+		$this->load->view('index',$data);
+	}
+
+
+
+	public function register_member()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		$data['member_id'] = $std_id=$this->uri->segment(3);
+		$data['page'] = "register";
+		$data['course'] = $this->model->getCourse();
+		$this->load->view('index',$data);
+	}
+
+
+	public function register_member_course_network()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		$data['member_id'] = $std_id=$this->uri->segment(3);
+		$data['page'] = "register_new";
+		$data['course'] = $this->model->getCourse();
+		$this->load->view('index',$data);
+	}
+
+	public function register_success()
+	{
+		$data['page'] = "register_success";
+		$this->load->view('index',$data);
+	}
+	public function job()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		
+		$data['page'] = "job";
+		$data['job'] = $this->model->getjob();
+		$this->load->view('index',$data);
+	}	
+	public function upload()
+	{
+		$this->load->view('upload_form');
+	}
+	public function news()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		
+		$ID=$this->uri->segment(3);
+		$data['page'] = "news";
+		$data['content'] = $this->model->getNews($ID);
+		
+		$this->load->view('index',$data);
+	}
+	public function getnews()
+	{
+		$ID=$this->uri->segment(3);
+		$content = $this->model->getNews2($ID);
+		//print_r($ID);
+		echo $content;
+		//$this->load->view('index',$data);
+	}
+	public function article()
+	{
+		$data['keywords']="iddriver,เรียนขับรถ, รถยนต์ ราคา, รถ, สอนขับรถยนต์, โรงเรียนขับรถ, โรงเรียนสอนขับรถพร้อมใบขับขี่, เรียนขับรถยนต์ใบขับขี่ ราคา, สอนขับรถ พร้อมใบขับขี่, เรียนขับรถยนต์, โรงเรียนสอนขับบรถยนต์, ราคาเรียนขับรถยนต์, เรียนขับรถยนต์ พร้อมใบขับขี่, สอนขับรถยนต์ พร้อมสอบใบขับขี่, โรงเรียนสอนขับ เรียนขับ สอนขับรถ, สอนขับ รถ ราคา, รร สอนขึ้บัรถ, รร. สอนขับบรถยนต์, โรงเรียนสอนขับรถยนต์ พร้อมใบ ขับขี่, สอนขับรถยนต์ ราคา, สอนขับรถ ราคา, ราคาสอนขับรถยนต์, สอนขับรถสอบใบขับขี่, โรงเรียนสอนขับรถ พร้อมสอบใบขับขี่, ราคาสอนขี่รถ,โรงเรียน เรียนขับมอเตอร์ไซค์, เรียนขับ มอเตอร์ไซค์, สอนขี่มอเตอร์ไซค์, โรงเรียนสอนขับรถที่ได้ใบขับขี่เลย, โรงเรียนสอนขับมอเตอร์ไซค์, สอนขับขี่ ปลอดภัย,อบรมพนักงานขับรถ, หลักสูตรอบรมพนักงานขับรถ,defensivedriver
+ 
+"; 
+		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร"; 
+		 
+		$ID=$this->uri->segment(3);
+		$data['page'] = "article";
+		$data['content'] = $this->model->getArticle($ID);
+		
+		$this->load->view('index',$data);
+	}
+	public function add_register()
+	{
+
+		$data = array(
+			'course'=> $this->input->post('course'),
+			'citizenid'=> $this->input->post('citizenID'),
+			'firstname' => $this->input->post('firstname'),
+			'lastname' => $this->input->post('lastname'),
+			'address' => $this->input->post('address'),
+			'email' => $this->input->post('email'),
+			'phonenumber' => $this->input->post('phoneNumber'),
+			'mobilenumber' => $this->input->post('mobileNumber'),
+			'citizencopy'=> $this->input->post('citizencopy'),
+			'picture'=>$this->input->post('picture'),
+			'invited_by' => $this->input->post('invite_by'),
+			'branch' => $this->input->post('branch'),
+			'train_branch' => $this->input->post('trainbranch'),
+			'cost' => $this->input->post('cost'),
+			'staff_id'=>$this->session->userdata('ID')
+		);
+ 
+
+		if($data["branch"]=="สาขาบายพาส (ขอนแก่น)"){
+			$send_mail = "contact@iddriver.com";
+		}
+		if($data["branch"]=="สาขาขอนแก่น"){
+			$send_mail = "id-school@iddriver.com";
+		}else if($data["branch"]==trim("สาขาลำลูกกา (ปทุมธานี)") ){
+			$send_mail = "id-lumlukka@iddriver.com";
+		}else if($data["branch"]=="สาขามหาสารคาม"){
+			$send_mail = "id-mahasarakham@iddriver.com";
+		}else{
+			$send_mail = "contact@iddriver.com";
+		}
+
+		if($data["train_branch"]=="สาขาบายพาส (ขอนแก่น)"){
+			$send_mail2 = "contact@iddriver.com";
+		}
+		if($data["train_branch"]=="สาขาขอนแก่น"){
+			$send_mail2 = "id-school@iddriver.com";
+		}else if($data["train_branch"]==trim("สาขาลำลูกกา (ปทุมธานี)") ){
+			$send_mail2 = "id-lumlukka@iddriver.com";
+		}else if($data["train_branch"]=="สาขามหาสารคาม"){
+			$send_mail2 = "id-mahasarakham@iddriver.com";
+		}else{
+			$send_mail2 = "contact@iddriver.com";
+		}
+		// echo $data["branch"];
+		// echo $send_mail;
+		// echo "'".trim($data["branch"])."'";
+		// exit;
+
+	$insert_id=$this->model->insertCourseRegister($data);
+	$this->session->set_userdata(array('registerID'=>$insert_id));
+	$txt = $insert_id;
+    $encodeID = $this->str2hex($txt);
+	$html="
+        <p>คุณ ".$this->input->post('firstname')." ".$this->input->post('lastname')."<p>
+        <p>ได้ทำการสมัครเรียนหลักสูตร  ".$this->model->getCourseCost($this->input->post('course'))->course_name."<p>
+		<p>เมื่อวันที่ ".date("d/m/Y")." เวลา  ".date("H:i:s")." น.</p>
+		<a href='".site_url('main/bill')."/".$encodeID."'>ดาวน์โหลดใบนำฝาก</a>
+    ";
+    // echo $html;
+   //	 echo  $this->input->post('email');
+   //	 echo $send_mail ;
+   //  exit;
+    $mail = $this->mail_model->send_email('[สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$this->input->post('email'));
+	//$mail = $this->mail_model->send_email('[แจ้งสาขา สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$send_mail);
+	$mail = $this->mail_model->send_email('[แจ้งสาขา สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$send_mail2);
+	$this->session->set_userdata(array('register_status'=>1));
+	$this->session->set_userdata(array('register_id'=>$encodeID));
+    
+
+	redirect('main/register_success');
+	}
+
+
+
+
+public function add_register_network()
+	{
+
+		$data = array(
+			'course'=> $this->input->post('course'),
+			'citizenid'=> $this->input->post('citizenID'),
+			'firstname' => $this->input->post('firstname'),
+			'lastname' => $this->input->post('lastname'),
+			'address' => $this->input->post('address'),
+			'email' => $this->input->post('email'),
+			'phonenumber' => $this->input->post('phoneNumber'),
+			'mobilenumber' => $this->input->post('mobileNumber'),
+			'citizencopy'=> $this->input->post('citizencopy'),
+			'picture'=>$this->input->post('picture'),
+			'invited_by' => $this->input->post('invite_by'),
+			'branch' => $this->input->post('branch'),
+			'train_branch' => $this->input->post('trainbranch'),
+			'cost' => $this->input->post('cost'),
+			'staff_id'=>$this->input->post('member_id'),
+		);
+ 
+
+		if($data["branch"]=="สาขาบายพาส (ขอนแก่น)"){
+			$send_mail = "contact@iddriver.com";
+		}
+		if($data["branch"]=="สาขาขอนแก่น"){
+			$send_mail = "id-school@iddriver.com";
+		}else if($data["branch"]==trim("สาขาลำลูกกา (ปทุมธานี)") ){
+			$send_mail = "id-lumlukka@iddriver.com";
+		}else if($data["branch"]=="สาขามหาสารคาม"){
+			$send_mail = "id-mahasarakham@iddriver.com";
+		}else{
+			$send_mail = "contact@iddriver.com";
+		}
+
+		if($data["train_branch"]=="สาขาบายพาส (ขอนแก่น)"){
+			$send_mail2 = "contact@iddriver.com";
+		}
+		if($data["train_branch"]=="สาขาขอนแก่น"){
+			$send_mail2 = "id-school@iddriver.com";
+		}else if($data["train_branch"]==trim("สาขาลำลูกกา (ปทุมธานี)") ){
+			$send_mail2 = "id-lumlukka@iddriver.com";
+		}else if($data["train_branch"]=="สาขามหาสารคาม"){
+			$send_mail2 = "id-mahasarakham@iddriver.com";
+		}else{
+			$send_mail2 = "contact@iddriver.com";
+		}
+		// echo $data["branch"];
+		// echo $send_mail;
+		// echo "'".trim($data["branch"])."'";
+		// exit;
+
+	$insert_id=$this->model->insertCourseRegister($data);
+	$this->session->set_userdata(array('registerID'=>$insert_id));
+	$txt = $insert_id;
+    $encodeID = $this->str2hex($txt);
+	$html="
+        <p>คุณ ".$this->input->post('firstname')." ".$this->input->post('lastname')."<p>
+        <p>ได้ทำการสมัครเรียนหลักสูตร  ".$this->model->getCourseCost($this->input->post('course'))->course_name."<p>
+		<p>เมื่อวันที่ ".date("d/m/Y")." เวลา  ".date("H:i:s")." น.</p>
+		<a href='".site_url('main/bill')."/".$encodeID."'>ดาวน์โหลดใบนำฝาก</a>
+    ";
+    // echo $html;
+   //	 echo  $this->input->post('email');
+   //	 echo $send_mail ;
+   //  exit;
+    $mail = $this->mail_model->send_email('[สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$this->input->post('email'));
+	//$mail = $this->mail_model->send_email('[แจ้งสาขา สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$send_mail);
+	$mail = $this->mail_model->send_email('[แจ้งสาขา สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$send_mail2);
+	$this->session->set_userdata(array('register_status'=>1));
+	$this->session->set_userdata(array('register_id'=>$encodeID));
+    
+
+	redirect('main/register_success');
+	}
+
+
+
+	public function add_register2()
+	{
+
+		$data = array(
+			'course'=> $this->input->post('course'),
+			'citizenid'=> $this->input->post('citizenID'),
+			'firstname' => $this->input->post('firstname'),
+			'lastname' => $this->input->post('lastname'),
+			'address' => $this->input->post('address'),
+			'email' => $this->input->post('email'),
+			'phonenumber' => $this->input->post('phoneNumber'),
+			'mobilenumber' => $this->input->post('mobileNumber'),
+			'citizencopy'=> $this->input->post('citizencopy'),
+			'picture'=>$this->input->post('picture'),
+			'invited_by' => $this->input->post('invite_by'),
+			'branch' => $this->input->post('branch'),
+			'train_branch' => $this->input->post('trainbranch'),
+			'cost' => $this->input->post('cost'),
+			'staff_id'=>$this->session->userdata('ID'),
+			'course'=>'5'
+		);
+ 
+
+		 
+			$send_mail = "contact@iddriver.com";
+		 
+	$insert_id=$this->model->insertCourseRegister($data);
+	$this->session->set_userdata(array('registerID'=>$insert_id));
+	$txt = $insert_id;
+    $encodeID = $this->str2hex($txt);
+	$html="
+        <p>ผู้สมัครชื่อ คุณ ".$this->input->post('firstname')." ".$this->input->post('lastname')."<p>
+        <p>เบอร์".$this->input->post('mobileNumber')."<p>
+		 
+		<p>สมัครโดยโดย ". $this->input->post('invite_by') ." </p>
+		<p>สาขา ". $this->input->post('branch') ." </p>
+		<p>เมื่อวันที่ ".date("d/m/Y")." เวลา  ".date("H:i:s")." น.</p>
+		 
+    ";
+    // echo $html;
+   //	 echo  $this->input->post('email');
+   //	 echo $send_mail ;
+   //  exit;
+   // $mail = $this->mail_model->send_email('[สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$this->input->post('email'));
+	//$mail = $this->mail_model->send_email('[แจ้งสาขา สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$send_mail);
+	$mail = $this->mail_model->send_email('[แจ้งสาขา สมัครเรียน]  คุณ'.$this->input->post('firstname'),$html,$send_mail);
+	$this->session->set_userdata(array('register_status'=>1));
+	$this->session->set_userdata(array('register_id'=>$encodeID));
+    
+
+	redirect('main/register_success');
+	}
+
+  public function view_register(){
+  	/*
+  	if($this->captcha->check_captcha()==0){
+		 redirect('main/register/wrong_captcha');
+	 }
+	 else{
+	 */
+	    $imageupload = $_FILES['files']['tmp_name'];
+	    $imageupload_name = $_FILES['files']['name'];
+	    for($i=0;$i<count($imageupload);$i++){
+			if(!empty($imageupload_name[$i])){
+		    	$path=$imageupload_name[$i];
+				$ext = pathinfo($path, PATHINFO_EXTENSION);
+				$base = pathinfo($path, PATHINFO_FILENAME);
+				$name = $base.date("Y-m-d_H_i_s.").$ext;
+				$imageupload_name[$i]=$name;
+				$filetype[$i] = substr($imageupload_name[$i], -3);
+				if($filetype[$i]=="png"||$filetype[$i]=="jpg"||$filetype[$i]=="bmp"||$filetype[$i]=="gif"){
+					copy($imageupload[$i],"img/uploads/register/".$name);
+				}else{
+					redirect('main/register/invalid');
+	     		}
+	  		}
+		}
+	    $data['page'] = "view_register";
+	    $data['image']=$imageupload_name;
+	    $data['detail'] =$this->input->post();
+	    	//    echo  $this->input->post('price');exit;
+	    $data['price'] = $this->input->post('price');
+	    $data['trainbranch'] = $this->input->post('train_branch');
+	    
+	    $data['member_id']=$this->input->post('member_id');
+	    $data['course'] =$this->model->getCourseByID($this->input->post('course'));
+	    // print_r( $data['course']);
+	    // exit();
+	    $this->load->view('index',$data);
+	//}
+  }
+
+
+  public function view_register_network(){
+  	/*
+  	if($this->captcha->check_captcha()==0){
+		 redirect('main/register/wrong_captcha');
+	 }
+	 else{
+	 */
+	    $imageupload = $_FILES['files']['tmp_name'];
+	    $imageupload_name = $_FILES['files']['name'];
+	    for($i=0;$i<count($imageupload);$i++){
+			if(!empty($imageupload_name[$i])){
+		    	$path=$imageupload_name[$i];
+				$ext = pathinfo($path, PATHINFO_EXTENSION);
+				$base = pathinfo($path, PATHINFO_FILENAME);
+				$name = $base.date("Y-m-d_H_i_s.").$ext;
+				$imageupload_name[$i]=$name;
+				$filetype[$i] = substr($imageupload_name[$i], -3);
+				if($filetype[$i]=="png"||$filetype[$i]=="jpg"||$filetype[$i]=="bmp"||$filetype[$i]=="gif"){
+					copy($imageupload[$i],"img/uploads/register/".$name);
+				}else{
+					redirect('main/register/invalid');
+	     		}
+	  		}
+		}
+	    $data['page'] = "view_register_network";
+	    $data['image']=$imageupload_name;
+	    $data['detail'] =$this->input->post();
+	    	//    echo  $this->input->post('price');exit;
+	    $data['price'] = $this->input->post('price');
+	    $data['trainbranch'] = $this->input->post('train_branch');
+	    
+	    $data['member_id']=$this->uri->segment(3);
+	    $data['course'] =$this->model->getCourseByID($this->input->post('course'));
+	    //print_r( $data);
+	    // exit();
+	    $this->load->view('index',$data);
+	//}
+  }
+
+    public function view_register2(){
+  	 
+	    $data['page'] = "view_register2";
+  $data['detail'] =$this->input->post();
+	    $this->load->view('index',$data);
+	//}
+  }
+
+
+  public function bill(){
+	  	$hex = $this->uri->segment(3);
+	  	$id = $this->hex2str($hex);
+
+  	//if($this->session->userdata('registerID')==$id){
+	  	$data['register']=$this->model->get_register_row($id);
+	  	// print_r($data['register']);
+	  	// exit();
+	    $this->load->view('bill',$data);
+	//}
+	// else{
+	// 	redirect('main/register');
+	// }
+   }
+   	public function barcode()
+	{
+		$barcode="|".str_replace("-",chr(13),$this->uri->segment(3));
+		require('./application/libraries/barcode/class/BCGColor.php');
+		require('./application/libraries/barcode/class/BCGDrawing.php');
+		require('./application/libraries/barcode/class/BCGcode128.barcode.php');
+		 
+		$color_black = new BCGColor(0, 0, 0);
+		$color_white = new BCGColor(255, 255, 255);
+		 
+		// Barcode Part
+		$code = new BCGcode128();
+		$code->setScale(2);
+		$code->setThickness(30);
+		$code->setForegroundColor($color_black);
+		$code->setBackgroundColor($color_white);
+		$code->setFont($font);
+		$code->setStart(NULL);
+		$code->setTilde(true);
+		$code->parse($barcode);
+		 
+		// Drawing Part
+		$drawing = new BCGDrawing('', $color_white);
+		$drawing->setBarcode($code);
+		$drawing->draw();
+		 
+		header('Content-Type: image/png');
+		$drawing->finish(BCGDrawing::IMG_FORMAT_PNG);
+	}
+	public function employee_register()
+	{ 
+       if($this->captcha->check_captcha()==0){
+			 redirect('main/job/wrong_captcha');
+		 }
+		else{
+	       $data = array(
+				'position'=> $this->input->post('position'),
+			   'salary' => $this->input->post('salary'),
+			   'firstname' => $this->input->post('firstname'),
+				'lastname'=> $this->input->post('lastname'),
+			   'birthdate' => $this->input->post('birthdate'),
+			   'education' => $this->input->post('education'),
+			   'address' => $this->input->post('address'),
+			   'mobilephone' => $this->input->post('mobilephone'),
+			   'email' => $this->input->post('email')
+			);
+			
+			$id=$this->model->test_get($data);
+			$from = $this->input->post('from');
+			$workto = $this->input->post('toDate');
+			$company = $this->input->post('company');
+			$position = $this->input->post('oldPosition');
+			for($i=0; $i<count($from); $i++){
+				$data = array(
+	               'workfrom' => $from[$i],
+	               'workto' => $workto[$i],
+	               'company' => $company[$i],
+	               'position' => $position[$i],
+	               'jobID' => $id
+	            );
+				$this->model->insertOldWork($data);
+			}
+
+
+
+			$title = '[สมัครงาน]คุณ'.$this->input->post('firstname').' '.$this->input->post('lastname');
+			$html = '<p>คุณ'.$this->input->post('firstname').' '.$this->input->post('lastname').'</p>'
+					.'<p>ได้ทำการสมัครงานตำแหน่ง '.$this->input->post('position').'</p>'
+					.'<p><a href="'.site_url('admin/view_job_register/'.$id).'">ดูเพิ่มเติม</a> </p>';
+			$this->mail_model->send_email($title,$html,null);
+			redirect('main/job/success');
+		}
+	}
+	public function reloadCaptcha(){
+		$image = array('image'=>$this->captcha->captcha_reload());
+		echo json_encode($image);
+	}
+	public function hex2str($hex) 
+	{
+	  return pack('H*', $hex);
+	}
+
+	public 	function str2hex($str) 
+	{
+	  return array_shift( unpack('H*', $str) );
+	}
+	public function excel()
+	{
+
+		$data['register']=$this->model->get_register();
+		// echo "<pre>";
+		// print_r($data['register']);
+		// exit();
+		$this->load->view('admin/excel',$data);
+	}
+
+	public function register_meber()
+	{
+		
+		$data["member_id"] =  $this->uri->segment(3);
+		$data['page'] = "register_member";
+		$this->load->view('index',$data);
+	}
+
+		public function register_complete()
+	{
+		
+	 
+		$data['page'] = "register_complete";
+		$this->load->view('index',$data);
+	}
+ 
+	public function add_network_member()
+	{
+		
+
+		$full_name =  $this->input->post('name');
+		$address = $this->input->post('address');
+		$mobile = $this->input->post('mobile');
+		$mail =  $this->input->post('email');
+		$pwd1 =  $this->input->post('pwd1');
+		$pwd2 =  $this->input->post('pwd2');
+		$member_id =  $this->input->post('member_id');
+
+
+ 		if($pwd1 != $pwd2){
+ 			 echo "<h1><font color=red> Password ไม่ตรงกัน กรุณาตรวจสอบอีกครั้ง </font></h1>";
+ 			 $url = base_url()."index.php/main/register_meber/".$member_id;
+ 			 echo '<meta http-equiv="refresh" content="2;url='.$url .'">';
+ 		}else{
+ 			$inData=array("name"=>$full_name ,
+ 						"address"=>$address ,
+ 						"mobile"=>$mobile,
+ 						"username"=>$mail,
+ 						"password"=>md5($pwd1),
+ 						"level"=>9
+ 						 );
+ 			$this->user_model->network_member_insert($inData, $member_id);
+ 			$url = base_url()."index.php/main/register_complete/";
+ 			 echo '<meta http-equiv="refresh" content="0;url='.$url .'">';
+ 		}
+	}
+
+
+	
+}
