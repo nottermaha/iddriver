@@ -647,11 +647,20 @@ class admin extends CI_Controller {
 		$this->load->view('admin/admin',$data);
 	}	
 	public function edit_course_admin_set()	{
-		$id=$this->uri->segment(3);
+		$prop = array(
+      'upload_path' => 'img/',
+      'allowed_types' => 'jpg|jpeg|png|JPG|JPEG|PNG',
+      'txt_upload' => 'file',
+      'txt_unlink' => 'default-image.jpg',
+      'default_file' => 0,
+    );
+    $file_name = $this->upload_file($prop);
+		// $id=$this->uri->segment(3);
 		$qstr = array(
 			'ID' => $this->input->post('ID'),
 			'course_name' => $this->input->post('course_name'),
 			'course_desc' => $this->input->post('course_desc'),
+			'image' => $file_name,
 			'status' => '1'
 		);
 		// print_r($qstr);exit();
