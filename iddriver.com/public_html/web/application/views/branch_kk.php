@@ -3,7 +3,7 @@
 
   <div class="section">
 
-<div class="row" style="padding-top:80px;">
+<div class="row" style="padding-top:5px;">
     <div class="col-md-3"style="padding-left:23px;">
       <div class="panel" >
         <div class="body" style="padding-left:20px;">
@@ -39,23 +39,18 @@
 
     <div class="col-md-6">
       <div class="panel">
-        <div class="body" style="padding-left:20px;padding-right:20px;">
+        <div class="body" style="padding:30px;">
               <h1 style="text-align:center;"><?php echo $branch['name'] ?></h1>
               <hr style="width:90%;">
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['address'] ?></p>
-              <div class="row">
+              <div class="row"><?php foreach($branch_catagory as $key=>$value){?>
                 <div class="col-md-6">
-                  <a href="<?php echo base_url()?>/img/branchkk1.jpg">
-                      <img src="<?php echo base_url()?>/img/branchkk1.jpg"
+                  <a href="<?php echo base_url('img/'.$value['image']);?>">
+                      <img src="<?php echo base_url('img/'.$value['image']);?>"
                       class="img-responsive" style="width:300px;height:200px;">
                   </a>
-                </div>
-                <div class="col-md-6">
-                  <a href="<?php echo base_url()?>/img/branchkk2.jpg">
-                    <img src="<?php echo base_url()?>/img/branchkk2.jpg"
-                    class="img-responsive" style="width:300px;height:200px;">
-                  </a>
-                </div>
+                    </div>
+                <?php } ?>
               </div>
                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['thaiDetail'] ?></p> 
                   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['englishDetail'] ?></p>

@@ -21,6 +21,7 @@ class main extends CI_Controller {
 	}
 	public function branch_all()
 	{
+		$id=$this->uri->segment(3);
 		$data['page'] = "branch_all";
 		$data['branch']=$this->model->getBranchs($id);
 		// print_r($data);exit();
@@ -32,6 +33,7 @@ class main extends CI_Controller {
 		$data['page'] = "branch_kk";
 		$data['branch']=$this->model->getBranch_by_id($id);
 		$data["url"]= $this->model->getUrls();
+		$data['branch_catagory']=$this->model->getImages($id);
 		// print_r($data);exit();
 		$this->load->view('index',$data);
 	}
@@ -51,6 +53,7 @@ class main extends CI_Controller {
 		// print_r($data);exit();
 		$this->load->view('index',$data);
 	}
+
 // 	public function getYoutube()
 // 	{
 
@@ -164,13 +167,12 @@ class main extends CI_Controller {
  
 "; 
 		$data['description']="IDDriver สถาบันฝึกอบรม สอนขับรถเอกชน สอนขับ รถยนต์ รถบรรทุก รถจักรยานต์อนญุาตโดยกรมการข่นส่งทางบกและกระทรวงศึกษาธกิาร ที่ปรึกษาโรงเรียนสอนขับรถ " ; 
-		
+		$id=$this->uri->segment(3);
 		$data['page'] = "register";
 		$data['course'] = $this->model->getCourse();
+		$data['course2']=$this->model->get_course_id($id);
 		$this->load->view('index',$data);
 	}
-
-
 
 	public function register_member()
 	{

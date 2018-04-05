@@ -503,6 +503,7 @@ class model extends CI_Model {
 
 		return $query->row_array();
 	}
+	
 
 	public function setBranch($qstr)	{
 		if ($qstr['id'] == '')	{
@@ -605,6 +606,11 @@ class model extends CI_Model {
 		$this->db->where('id',$id);
 		$query = $this->db->get('check_car');
 
+		return $query->row_array();
+	}
+	function get_course_id($id){
+		$this->db->where('ID',$id);
+			$query = $this->db->get('course');
 		return $query->row_array();
 	}
 
