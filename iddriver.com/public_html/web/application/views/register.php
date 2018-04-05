@@ -49,8 +49,8 @@
                             <input type="text" name='firstname' class="form-control" required>
                             <label>นามสกุล (Lastname):</label>
                             <input type="text" name='lastname' class="form-control" required>
-                            <label>ที่อยู่ (Address):</label>
-                            <textarea name='address' class="form-control" required></textarea>
+                            <!-- <label>ที่อยู่ (Address):</label>
+                            <textarea name='address' class="form-control" required></textarea> -->
                             <label>Email:</label>
                             <input type="text" name='email' class="form-control" required>
                             <label>เบอร์โทรศัพท์ (Phone No.):</label>

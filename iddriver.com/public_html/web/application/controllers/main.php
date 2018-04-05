@@ -35,6 +35,22 @@ class main extends CI_Controller {
 		// print_r($data);exit();
 		$this->load->view('index',$data);
 	}
+	public function check_car_all()
+	{
+		$data['page'] = "check_car_all";
+		$data['car_all']=$this->model->get_car_all();
+		// print_r($data);exit();
+		$this->load->view('index',$data);
+	}
+	public function check_car()
+	{
+		$id=$this->uri->segment(3);
+		$data['page'] = "check_car";
+		$data['car_all']=$this->model->get_car_all();
+		$data['car_by_id']=$this->model->get_car_by_id($id);
+		// print_r($data);exit();
+		$this->load->view('index',$data);
+	}
 // 	public function getYoutube()
 // 	{
 
@@ -243,7 +259,7 @@ class main extends CI_Controller {
 			'citizenid'=> $this->input->post('citizenID'),
 			'firstname' => $this->input->post('firstname'),
 			'lastname' => $this->input->post('lastname'),
-			'address' => $this->input->post('address'),
+			'address' => '',
 			'email' => $this->input->post('email'),
 			'phonenumber' => $this->input->post('phoneNumber'),
 			'mobilenumber' => $this->input->post('mobileNumber'),
