@@ -8,7 +8,7 @@
     <div class="body">
       <br>
         <!-- <form> -->
-        <?php echo form_open('admin/edit_course_pageweb'); ?>
+        <?php echo form_open_multipart('admin/edit_course_pageweb'); ?>
         <div class="form-group row">  
         <b style="text-align:right;"><label for="inputPassword" class="col-sm-2 col-form-label"> ชื่อคอร์ส</label></b>
           <div class="col-sm-9">
@@ -16,12 +16,12 @@
             value="<?php echo $course[0]['course_name'] ?>">
           </div>
         </div>
-        <!-- <div class="form-group row">
+        <div class="form-group row">
         <b style="text-align:right;"><label for="inputPassword" class="col-sm-2 col-form-label">รูปภาพ</label></b>
           <div class="col-sm-9">
-            <input type="file" class="form-control" id="inputPassword" placeholder="Password">
+			      <input type="file" name="file" id="file" class="file" class="form-control" data-preview-file-type="text">
           </div>
-        </div> -->
+        </div>
         <div class="form-group row">
         <b style="text-align:right;"><label for="inputPassword" class="col-sm-2 col-form-label">รายละเอียด</label></b>
           <div class="col-sm-9">

@@ -445,13 +445,21 @@ class model extends CI_Model {
 		return $query->result_array();
 	}
 	public function set_edit_course_pageweb($qstr)	{
+		if ($qstr['image']!='default-image.jpg') {
 			$data = array(
-	
+				'course_name' => $qstr['course_name'],
+				'course_desc' => $qstr['course_desc'],
+				'image' => $qstr['image'],
+				'status' => $qstr['status']
+			);
+		}
+		else {
+			$data = array(
 				'course_name' => $qstr['course_name'],
 				'course_desc' => $qstr['course_desc'],
 				'status' => $qstr['status']
-	
 			);
+		}
 			$this->db->where('ID', $qstr['ID']);
 			$this->db->update('course', $qstr);	
 	}

@@ -4,7 +4,7 @@ class admin extends CI_Controller {
 	
 	public function __construct() 
     {
-        parent::__construct();
+				parent::__construct();
         // print_r($this->session->userdata('is_logged_in'));
         // exit();
         if ($this->session->userdata('is_logged_in') != 1) {
@@ -51,6 +51,7 @@ class admin extends CI_Controller {
 			'description'=>$this->input->post('description'),
 			'image' => $imageupload_name
 		);
+    echo '<pre>', print_r($data);exit();
 		$this->update->editnews($data);
 		redirect('admin/news');
 	}
@@ -614,11 +615,20 @@ class admin extends CI_Controller {
 		$this->load->view('admin/admin',$data);
 	}	
 	public function edit_course_pageweb()	{
-		$id=$this->uri->segment(3);
+		// $id=$this->uri->segment(3);
+    $prop = array(
+      'upload_path' => 'img/',
+      'allowed_types' => 'jpg|jpeg|png|JPG|JPEG|PNG',
+      'txt_upload' => 'file',
+      'txt_unlink' => 'default-image.jpg',
+      'default_file' => 0,
+    );
+    $file_name = $this->upload_file($prop);
 		$qstr = array(
 			'ID' => $this->input->post('ID'),
 			'course_name' => $this->input->post('course_name'),
 			'course_desc' => $this->input->post('course_desc'),
+			'image' => $file_name,
 			'status' => '1'
 		);
 		$this->model->set_edit_course_pageweb($qstr);
@@ -691,6 +701,31 @@ public function setStatusYoutube()
 	redirect('admin/getYoutube');
 
 }
+
+
+
+	function upload_file($prop)
+	{
+		$config['upload_path'] = $prop['upload_path'];
+				$config['allowed_types'] = $prop['allowed_types'];
+				$config['file_name'] = date("YmdHis");
+				
+				$this->load->library('upload');
+				$this->upload->initialize($config);
+
+				if ($this->upload->do_upload($prop['txt_upload'])) {
+						$data = $this->upload->data();
+						$file_name = $data['file_name'];  
+						// echo "<pre>", print_r($data);
+						if ($data['file_name'] != NULL && $prop['txt_unlink'] != '0' && $prop['txt_unlink'] !='' && $prop['txt_unlink'] != $prop['default_file']) {
+								unlink($prop['upload_path'].$prop['txt_unlink']);
+						}
+				}else {
+						//echo $this->upload->display_errors();
+						$file_name = ($prop['txt_unlink'] != NULL)? $prop['txt_unlink'] : '0';
+				}
+				return $file_name;
+	}
 	
 	  
 }
