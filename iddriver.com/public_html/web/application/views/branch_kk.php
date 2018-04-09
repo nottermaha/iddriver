@@ -41,6 +41,7 @@
       <div class="panel">
         <div class="body" style="padding:30px;">
               <h1 style="text-align:center;"><?php echo $branch['name'] ?></h1>
+              <h3 style="text-align:center;">หมายเลขโทรศัพท์&nbsp;<?php echo $branch['tel'] ?></h3>
               <hr style="width:90%;">
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['address'] ?></p>
               <div class="row"><?php foreach($branch_catagory as $key=>$value){?>
