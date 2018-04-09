@@ -36,7 +36,7 @@
             <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;ย้อนกลับ
            </a>
                 <input type="hidden"  name="ID" id="ID" value="<?php echo $course[0]['ID'] ?>">
-            <a type="submit" class="btn btn-success" ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;ตกลง</a>
+            <button type="submit" class="btn btn-success" ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;ตกลง</button>
             
           </div>
           <br>

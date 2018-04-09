@@ -609,10 +609,16 @@ class model extends CI_Model {
 		return $query->row_array();
 	}
 	function get_course_id($id){
+		$session = $this->session->all_userdata();//strat session]
 		$this->db->where('ID',$id);
-			$query = $this->db->get('course');
+		if(isset($session['ID'])){
+		$query = $this->db->get('course_admin');
+		}else{
+		$query = $this->db->get('course');
+		}
 		return $query->row_array();
 	}
+
 	
 
 }
