@@ -1,7 +1,8 @@
 <br>
 <div class="row">
   <div class="col-md-2">
-    <button type="button" data-toggle="modal" data-target="#newModal" class="btn btn-primary btn-block btn-lg"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New</button>
+    <button type="button" data-toggle="modal" data-target="#newModal" class="btn btn-primary btn-block"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;เพิ่มวีดีโอ</button>
+    
   </div>
   <div class="col-md-7"></div>
   <div class="col-md-3" align = "right">
@@ -16,8 +17,8 @@
     <thead>
       <tr>
         <th class='text-center'>#</th>
-        <th class='text-center'>URL</th>
-        <th class='text-center'>Manage</th>
+        <th class='text-center'>วีดีโอ</th>
+        <th class='text-center'>จัดการ</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -42,15 +43,15 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">URL</h4>
+                    <h4 class="modal-title">แก้ไข URL</h4>
                   </div>
                   <div class="modal-body">
                     <input type="hidden" class="form-control" name="urlId" id="urlId" value="<?php echo $value['id'] ?>">
                     <input type="text" class="form-control" name="url" id="url" value="<?php echo $value['url'] ?>">
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ยกเลิก</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก</button>
                   </div>
                 </div>
 
@@ -58,10 +59,10 @@
             </div>
           <?php echo form_close(); ?>
           <div class="col-md-6">
-            <button type="button" data-toggle="modal" data-target="#<?php echo $value['id'] ?>" class="btn btn-warning btn-block"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Edit</button>
+            <button type="button" data-toggle="modal" data-target="#<?php echo $value['id'] ?>" class="btn btn-warning btn-block"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;แก้ไข</button>
           </div>
           <div class="col-md-6">
-          <a href="<?php echo site_url('admin/setStatusYoutube/' . $value['id']) ?>" class="btn btn-danger btn-block"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Delete</a>
+          <a href="<?php echo site_url('admin/setStatusYoutube/' . $value['id']) ?>" class="btn btn-danger btn-block"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ลบ</a>
           </div>
         </td>
       </tr>
@@ -79,14 +80,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">URL</h4>
+          <h4 class="modal-title">เพื่ม URL</h4>
         </div>
         <div class="modal-body">
           <input type="text" class="form-control" name="url" id="url">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
-          <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ยกเลิก</button>
+          <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก</button>
         </div>
       </div>
 

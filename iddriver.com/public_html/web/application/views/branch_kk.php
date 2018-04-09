@@ -44,7 +44,7 @@
               <hr style="width:90%;">
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['address'] ?></p>
               <div class="row"><?php foreach($branch_catagory as $key=>$value){?>
-                <div class="col-md-6">
+                <div class="col-md-6" style="padding-bottom:10px;">
                   <a href="<?php echo base_url('img/'.$value['image']);?>">
                       <img src="<?php echo base_url('img/'.$value['image']);?>"
                       class="img-responsive" style="width:300px;height:200px;">

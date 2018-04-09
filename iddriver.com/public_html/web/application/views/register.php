@@ -133,7 +133,7 @@
                         <div class="panel-body">
 
                             <div class="col-xs-12">
-                                <img src="<?php echo base_url('img/'.$value['image']);?>" alt="">
+                                <img src="<?php echo base_url('img/'.$value['image']);?>" alt="image">
                             </div>
                             <div class="col-xs-12">
                                 <?php echo $value['course_desc'] ?>

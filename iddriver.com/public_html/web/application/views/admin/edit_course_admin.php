@@ -33,7 +33,11 @@
           <div class="row text-center">
           <!-- <a href="#" class="btn btn-warning" >ย้อนกลับ</a> -->
           <input type="hidden"  name="ID" id="ID" value="<?php echo $course[0]['ID'] ?>">
-            <button type="submit" class="btn btn-success" >ตกลง</button>
+            <a href="<?php echo site_url('admin/course') ?>" class="btn btn-warning">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;ย้อนกลับ
+           </a>
+                <input type="hidden"  name="ID" id="ID" value="<?php echo $course[0]['ID'] ?>">
+            <a type="submit" class="btn btn-success" ><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;ตกลง</a>
           </div>
           <br>
       <!-- </form> -->
