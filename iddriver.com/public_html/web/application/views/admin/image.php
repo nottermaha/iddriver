@@ -1,17 +1,17 @@
 <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
 <br>
 <div class="row">
-  <div class="col-sm-1">
+  <div class="col-sm-2">
     <a href="<?php echo site_url('admin/getBranchs') ?>" class="btn btn-warning">
-    <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;ย้อนกลับ
     </a>
   </div>
-  <div class="col-sm-1">
+  <div class="col-sm-2">
     <button type="button" data-toggle="modal" data-target="#newModal" class="btn btn-primary">
-      <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New
+      <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;เพิ่มรูปภาพ
     </button>
   </div>
-  <div class="col-sm-7"></div>
+  <div class="col-sm-5"></div>
   <div class="col-sm-3" align = "right">
     <input class="form-control" id="myInput" type="text" placeholder="Search..">
   </div>
@@ -24,8 +24,8 @@
     <thead>
       <tr>
         <th class='text-center'>#</th>
-        <th class='text-center'>Image</th>
-        <th class='text-center'>Manage</th>
+        <th class='text-center'>รูปภาพ</th>
+        <th class='text-center'>จัดการ</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -51,14 +51,14 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">New&nbsp;Image</h4>
+                    <h4 class="modal-title">แก้ไขรูปภาพ</h4>
                   </div>
                   <div class="modal-body">
 
                     <input type="hidden" class="form-control" name="branchId" id="branchId" value="<?php echo $value['branchId'] ?>">
                     <input type="hidden" class="form-control" name="imageId" id="imageId" value="<?php echo $value['id'] ?>">
                     <div class="row">
-                      <label class="control-label col-sm-1" for="file">Image:</label>
+                      <label class="control-label col-sm-1" for="file">รูปภาพ:</label>
                       <div class="col-sm-11">
                         <input type="hidden" class="form-control" name="oldImage" id="oldImage" value="<?php echo $value['image'] ?>">
                         <input type="file" name="file" id="file" class="file" class="form-control" data-preview-file-type="text">
@@ -67,8 +67,8 @@
                     
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ยกเลิก</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก</button>
                   </div>
                 </div>
 
@@ -77,10 +77,10 @@
           <?php echo form_close(); ?>
           
           <div class="col-sm-6">
-            <button type="button" data-toggle="modal" data-target="#<?php echo $value['id'] ?>" class="btn btn-warning btn-block"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Edit</button>
+            <button type="button" data-toggle="modal" data-target="#<?php echo $value['id'] ?>" class="btn btn-warning btn-block"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;แก้ไข</button>
           </div>
           <div class="col-sm-6">
-          <a href="<?php echo site_url('admin/setStatusImage/' . $value['id'] . '/' . $branchId) ?>" class="btn btn-danger btn-block"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Delete</a>
+          <a href="<?php echo site_url('admin/setStatusImage/' . $value['id'] . '/' . $branchId) ?>" class="btn btn-danger btn-block"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ลบ</a>
           </div>
           
         </td>
@@ -99,13 +99,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">New&nbsp;Image</h4>
+          <h4 class="modal-title">เพิ่มรูปภาพ</h4>
         </div>
         <div class="modal-body">
 
           <input type="hidden" class="form-control" name="branchId" id="branchId" value="<?php echo $branchId ?>">
           <div class="row">
-            <label class="control-label col-sm-1" for="file">Image:</label>
+            <label class="control-label col-sm-1" for="file">รูปภาพ:</label>
             <div class="col-sm-11">
 			        <input type="file" name="file" id="file" class="file" class="form-control" data-preview-file-type="text">
             </div>
@@ -113,8 +113,8 @@
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
-          <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ยกเลิก</button>
+          <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก</button>
         </div>
       </div>
 

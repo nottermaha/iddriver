@@ -37,10 +37,10 @@
               <td style="text-align:right">ชื่อ-นามสกุล</td>
               <td><?php echo $detail['firstname'].' '.$detail['lastname'] ?></td>
             </tr>
-             <tr>
+             <!-- <tr>
               <td style="text-align:right">ที่อยู่</td>
               <td><?php echo $detail['address'] ?></td>
-            </tr>
+            </tr> -->
              <tr>
               <td style="text-align:right">อีเมล</td>
               <td><?php echo $detail['email'] ?></td>

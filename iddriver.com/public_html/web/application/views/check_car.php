@@ -38,8 +38,8 @@
         <hr style="width:90%;"> 
           <div class="row">
             <div style="padding-left:50px;">
-           ตรวจสอบภาพรถ <br>
-           เปลี่ยนน้ำมันเครื่อง <br>
+            <i class="fa fa-car">&nbsp;</i>ตรวจสอบภาพรถ <br>
+            <br>
             </div>
         </div>
         <h1 style="text-align:center;">สาขาทั้งหมด</h1>
