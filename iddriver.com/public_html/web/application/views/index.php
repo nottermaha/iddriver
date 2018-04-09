@@ -179,7 +179,7 @@
 						<a href="<?php echo site_url('main/register/2');?>"><i class="fa fa-motorcycle"></i>&nbsp; หลักสูตรรถจักรยานยนต์</a><br>
 						<a href="<?php echo site_url('main/register/4');?>"><i class="fa fa-bus"></i>\&nbsp; หลักสูตรอบรมรถขนส่งบรรทุก </a><br>
                         <a href="<?php echo site_url('main/register/5');?>"><i class="fa fa-bus"></i>\&nbsp; หลักสูตรอบรมรถลากจูง </a><br>
-                        <a href="<?php echo site_url('main/contact');?>"><i class="fa fa-bus"></i>\&nbsp; หลักสูตรอบรมพนักงานขับรถ </a><br>
+                        <a href="<?php echo site_url('main/contact');?>"><i class="fa fa-user"></i>&nbsp; หลักสูตรอบรมพนักงานขับรถ </a><br>
                         <a href="<?php echo site_url('main/contact');?>"><i class="fa fa-bus"></i>\&nbsp; หลักสูตรอบรม Defensive Dirver </a>					
 				</address>
                 </div>

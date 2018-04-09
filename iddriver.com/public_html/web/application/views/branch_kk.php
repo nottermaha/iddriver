@@ -44,7 +44,9 @@
               <h3 style="text-align:center;">หมายเลขโทรศัพท์&nbsp;<?php echo $branch['tel'] ?></h3>
               <hr style="width:90%;">
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['address'] ?></p>
-              <div class="row"><?php foreach($branch_catagory as $key=>$value){?>
+                  <p><?php echo $branch['thaiDetail'] ?></p> 
+                  <p><?php echo $branch['englishDetail'] ?></p>
+                  <div class="row"><?php foreach($branch_catagory as $key=>$value){?>
                 <div class="col-md-6" style="padding-bottom:10px;">
                   <a href="<?php echo base_url('img/'.$value['image']);?>">
                       <img src="<?php echo base_url('img/'.$value['image']);?>"
@@ -53,8 +55,6 @@
                     </div>
                 <?php } ?>
               </div>
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['thaiDetail'] ?></p> 
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $branch['englishDetail'] ?></p>
         </div>
       </div>
     </div>
@@ -69,9 +69,6 @@
             <div style="padding-left:20px;">
                 <iframe width="300px" height="250px" src="<?php echo $value['url'] ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
-            <!-- <div style="padding-left:20px;">
-                <iframe width="300px" height="250px" src="https://www.youtube.com/embed/M47E9eebYos" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div> -->
             <?php }?>
           </div>
         </div>

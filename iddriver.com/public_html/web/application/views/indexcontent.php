@@ -1,3 +1,5 @@
+
+
 <style>
 .dropbtn {
     background-color: rgb(230, 120, 23);
@@ -81,15 +83,22 @@
         <!-- <li><a href='<?php echo site_url('main/autocheck')?>'><span>ตรวจสอบสภาพรถ</span></a></li> -->
         <li><a href='<?php echo site_url('main/check_car_all')?>'><span>ตรวจสอบสภาพรถ</span></a></li>
         <li><a class='last' href='<?php echo site_url('main/gallery')?>'><span>บรรยากาศโรงเรียน</span></a></li>
+        <li> <div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+  <a class="dropdown-item" href="#">Something else here</a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">Separated link</a>
+</div></li>
         <li>
           <div class="dropdown">
-            <button class="dropbtn" style="font-family: 'thai_sans_literegular';font-size:23px;"> สาขา </button>
+            <a href="<?php echo site_url('main/branch_all')?>"style="font-family: 'thai_sans_literegular';font-size:23px;" > สาขาทั้งหมด </a>
             <div class="dropdown-content">
-            <a href="<?php echo site_url('main/branch_all')?>">สาขาทั้งหมด</a>
             <?php
             foreach($branch as $key=>$value){?>
 		       <a href="<?php echo site_url('main/branch_kk/'.$value['id'])?>"><?php echo $value['name'] ?></a>
 		      	<?php } ?>
+            
                <!-- <a href="<?php echo site_url('main/branch_kk')?>">สาขา ในเมืองขอนแก่น</a>
               <a href="<?php echo site_url('main/branch_1')?>">สาขา ปทุมธานี</a>
               <a href="<?php echo site_url('main/branch_2')?>">สาขา เลี่ยงเมืองขอนแก่น</a>

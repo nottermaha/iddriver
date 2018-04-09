@@ -27,7 +27,8 @@
                       <h2><?php echo $value['name'] ?></h2>
                           เบอร์โทรศัพท์ : <?php echo $value['tel'] ?> <br>
                           <!-- <button class="btn btn-defult">รายละเอียดสาขา</button> -->
-                          <a class="btn btn-default" href="<?php echo site_url('main/branch_kk/'.$value['id'])?>" >รายละเอียด</a>
+                          <div class="text-right">
+                          <a class="btn btn-default btn-lg " href="<?php echo site_url('main/branch_kk/'.$value['id'])?>" style="font-size:22px;"><i class="fa fa-list"></i> &nbsp;รายละเอียด</a></div>
                     </div>
                   </div>
                 </div>
