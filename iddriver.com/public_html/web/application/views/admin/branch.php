@@ -2,7 +2,7 @@
 <br>
 <div class="row">
   <div class="col-sm-2">
-    <button type="button" data-toggle="modal" data-target="#newModal" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;New</button>
+    <button type="button" data-toggle="modal" data-target="#newModal" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;เพิ่มสาขา</button>
   </div>
   <div class="col-sm-7"></div>
   <div class="col-sm-3" align = "right">
@@ -17,9 +17,9 @@
     <thead>
       <tr>
         <th class='text-center'>#</th>
-        <th class='text-center'>Name</th>
-        <th class='text-center'>Tel</th>
-        <th class='text-center'>Manage</th>
+        <th class='text-center'>สาขา</th>
+        <th class='text-center'>เบอร์โทร</th>
+        <th class='text-center'>จัดการ</th>
       </tr>
     </thead>
     <tbody id="myTable">
@@ -48,38 +48,38 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Branch&nbsp;Profile</h4>
+                    <h4 class="modal-title">แก้ไขรายละเอียด</h4>
                   </div>
                   <div class="modal-body">
 
                     <input type="hidden" class="form-control" name="branchId" id="branchId" value="<?php echo $value['id'] ?>">
                     <div class="row">
-                      <label class="control-label col-sm-1" for="name">Name:</label>
+                      <label class="control-label col-sm-1" for="name">ชื่อ:</label>
                       <div class="col-sm-5">
                         <input type="text" class="form-control" name="name" id="name" value="<?php echo $value['name'] ?>">
                       </div>
-                      <label class="control-label col-sm-1" for="tel">Tel:</label>
+                      <label class="control-label col-sm-1" for="tel">เบอร์โทร:</label>
                       <div class="col-sm-5">
                         <input type="text" class="form-control" name="tel" id="tel" value="<?php echo $value['tel'] ?>">
                       </div>
                     </div>
 
                     <div class="row" style="padding-top: 10px">
-                      <label class="control-label col-sm-1" for="address">Address:</label>
+                      <label class="control-label col-sm-1" for="address">ที่อยู่:</label>
                       <div class="col-sm-11">
                         <input type="text" class="form-control" name="address" id="address" value="<?php echo $value['address'] ?>">
                       </div>
                     </div>
 
                     <div class="row" style="padding-top: 10px">
-                      <label class="control-label col-sm-1" for="thaiDetail">Thai&nbsp;Detail:</label>
+                      <label class="control-label col-sm-6" for="thaiDetail">รายละเอียด&nbsp;(ภาษาไทย):</label>
                       <div class="col-sm-12">
                         <textarea class="ckeditor" id="exampleFormControlTextarea1" rows="5" name="thaiDetail" id="thaiDetail" ><?php echo $value['thaiDetail'] ?></textarea>
                       </div>
                     </div>
 
                     <div class="row" style="padding-top: 10px">
-                      <label class="control-label col-sm-1" for="englishDetail">English&nbsp;Detail:</label>
+                      <label class="control-label col-sm-6" for="englishDetail">รายละเอียด&nbsp;(ภาษาอังกฤษ):</label>
                       <div class="col-sm-12">
                         <textarea class="ckeditor" id="exampleFormControlTextarea1" rows="5" name="englishDetail" id="englishDetail" ><?php echo $value['englishDetail'] ?></textarea>
                       </div>
@@ -87,8 +87,8 @@
                     
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ยกเลิก</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก</button>
                   </div>
                 </div>
 
@@ -98,17 +98,17 @@
           
           <div class="col-sm-4">
             <a href="<?php echo site_url('admin/getImages/' . $value['id']) ?>" class="btn btn-primary btn-block">
-              <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;Image
+              <i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;รูปภาพ
             </a>
           </div>
           <div class="col-sm-4">
             <button type="button" data-toggle="modal" data-target="#<?php echo $value['id'] ?>" class="btn btn-warning btn-block">
-              <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;Edit
+              <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;แก้ไข
             </button>
           </div>
           <div class="col-sm-4">
             <a href="<?php echo site_url('admin/setStatusBranch/' . $value['id']) ?>" class="btn btn-danger btn-block">
-              <i class="fa fa-times" aria-hidden="true"></i>&nbsp;Delete
+              <i class="fa fa-times" aria-hidden="true"></i>&nbsp;ลบ
             </a>
           </div>
         </td>
@@ -127,37 +127,37 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Branch&nbsp;Profile</h4>
+          <h4 class="modal-title">เพิ่มรายละเอียดสาขาใหม่</h4>
         </div>
         <div class="modal-body">
 
           <div class="row">
-            <label class="control-label col-sm-1" for="name">Name:</label>
+            <label class="control-label col-sm-1" for="name">ชื่อ:</label>
             <div class="col-sm-5">
               <input type="text" class="form-control" name="name" id="name" placeholder="Name ...">
             </div>
-            <label class="control-label col-sm-1" for="tel">Tel:</label>
+            <label class="control-label col-sm-1" for="tel">เบอร์โทร:</label>
             <div class="col-sm-5">
               <input type="text" class="form-control" name="tel" id="tel" placeholder="Tel ...">
             </div>
           </div>
 
           <div class="row" style="padding-top: 10px">
-            <label class="control-label col-sm-1" for="address">Address:</label>
+            <label class="control-label col-sm-1" for="address">ที่อยู่:</label>
             <div class="col-sm-11">
               <input type="text" class="form-control" name="address" id="address" placeholder="Address ...">
             </div>
           </div>
 
           <div class="row" style="padding-top: 10px">
-            <label class="control-label col-sm-1" for="address">Thai&nbsp;Detail:</label>
+            <label class="control-label col-sm-6" for="address">รายละเอียด&nbsp;(ภาษาไทย):</label>
             <div class="col-sm-12">
               <textarea class="ckeditor" id="exampleFormControlTextarea1" rows="5" name="thaiDetail" placeholder="Thai Detail ..."></textarea>
             </div>
           </div>
 
           <div class="row" style="padding-top: 10px">
-            <label class="control-label col-sm-1" for="address">English&nbsp;Detail:</label>
+            <label class="control-label col-sm-6" for="address">รายละเอียด&nbsp;(ภาษาอังกฤษ)):</label>
             <div class="col-sm-12">
               <textarea class="ckeditor" id="exampleFormControlTextarea1" rows="5" name="englishDetail" placeholder="English Detail ..."></textarea>
             </div>
@@ -165,8 +165,8 @@
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
-          <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;ยกเลิก</button>
+          <button type="submit" class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;บันทึก</button>
         </div>
       </div>
 
