@@ -171,6 +171,8 @@ class main extends CI_Controller {
 		$data['page'] = "register";
 		$data['course'] = $this->model->getCourse();
 		$data['course2']=$this->model->get_course_id($id);
+		$data['branch']=$this->model->getBranchs();
+	
 		$this->load->view('index',$data);
 	}
 

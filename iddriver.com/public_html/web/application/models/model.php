@@ -613,6 +613,7 @@ class model extends CI_Model {
 			$query = $this->db->get('course');
 		return $query->row_array();
 	}
+	
 
 }
 ?>

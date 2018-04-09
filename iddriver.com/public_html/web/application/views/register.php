@@ -122,30 +122,9 @@
                 </div>
             </div>
 
-            <?php $index = 0 ?>
-            <?php foreach ($course as $key => $value) { ?>
-                <?php $index += 1 ?>
-                <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList<?php echo $index ?>" style="display:none">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><?php echo $value['course_name'] ?></h3>
-                        </div>
-                        <div class="panel-body">
 
-                            <div class="col-xs-12">
-                                <img src="<?php echo base_url('img/'.$value['image']);?>" alt="image">
-                            </div>
-                            <div class="col-xs-12">
-                                <?php echo $value['course_desc'] ?>
-                                <h3>15 ชม. / ราคา <?php echo number_format($value['course_cost']); ?> บาท</h3>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            <?php } ?>
-
-            <!-- <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList1" style="display:none">
+             <div class="col-md-8 col-xs-12 courseDetail" id="courseDetailList1" style="display:none">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><?php echo $course2['course_name'];?></h3>
@@ -154,7 +133,7 @@
 
                         <div class="col-xs-12">
                             <!-- <img src="<?php echo base_url();?>/img/DSC_5333.jpg" alt=""> -->
-                            <img src="<?php echo base_url('img/'.$course2['image']);?>/img/DSC_5488.jpg" alt="image">
+                            <img src="<?php echo base_url('img/'.$course2['image']);?>" alt="image">
                         </div>
                         <div class="col-xs-12">
                         	<!-- <h3 style="text-decoration:underline">ใบขับขี่รถยนต์</h3>
@@ -359,7 +338,7 @@
         if (course == 3) {
             $('.courseDetail').hide();
             $('#courseDetailList3').show("drop");
-            $('select[name = course] option[value=2]').prop('selected',true);
+            $('select[name = course] option[value=3]').prop('selected',true);
         }
         if (course== 4) {
             $('.courseDetail').hide();
@@ -387,15 +366,19 @@
             $('.courseDetail').hide();
             if (this.value == 1) {
                 $('#courseDetailList1').show("drop");
+                window.location = "<?php echo site_url('main/register/1') ?>";
             }
             if (this.value == 2) {
                 $('#courseDetailList2').show("drop");
+                window.location = "<?php echo site_url('main/register/2') ?>";
             }
             if (this.value == 3) {
                 $('#courseDetailList3').show("drop");
+                window.location = "<?php echo site_url('main/register/3') ?>";
             }
             if (this.value == 4) {
                 $('#courseDetailList4').show("drop");
+                window.location = "<?php echo site_url('main/register/4') ?>";
             }
             if (this.value == 5) {
                  window.location = "<?php echo site_url() ?>/main/contact/train";
