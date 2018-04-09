@@ -92,7 +92,7 @@
 </div></li>
         <li>
           <div class="dropdown">
-            <a href="<?php echo site_url('main/branch_all')?>"style="font-family: 'thai_sans_literegular';font-size:23px;" > สาขาทั้งหมด </a>
+            <a href="<?php echo site_url('main/branch_all')?>"style="font-family: 'thai_sans_literegular';font-size:19px;" > สาขาทั้งหมด </a>
             <div class="dropdown-content">
             <?php
             foreach($branch as $key=>$value){?>
